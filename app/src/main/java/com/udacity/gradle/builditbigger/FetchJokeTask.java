@@ -52,8 +52,8 @@ public class FetchJokeTask extends AsyncTask<Void,Void,String> {
 //        Log.v("archit",builder.build().toString());
         URL url = null;
         try {
-            //url = new URL("http://10.0.2.2:8080/_ah/api/jokeApi/v1/mybean");
-            url = new URL("http://localhost:8080/_ah/api/jokeApi/v1/mybean");
+            url = new URL("http://10.0.2.2:8080/_ah/api/jokeApi/v1/mybean");
+            //url = new URL("http://localhost:8080/_ah/api/jokeApi/v1/mybean");
 
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
