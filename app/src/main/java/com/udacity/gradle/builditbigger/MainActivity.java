@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -39,17 +40,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view){
-//        JokeGenerator jokeGenerator = new JokeGenerator();
-//        String joke = jokeGenerator.getJoke();
-//        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
-
-//        JokeGenerator jokeGenerator = new JokeGenerator();
-//        String joke = jokeGenerator.getJoke();
-//        Intent intent = new Intent(getApplicationContext(), DisplayJokeActivity.class);
-//        intent.putExtra("joke",joke);
-//        startActivity(intent);
         FetchJokeTask fetchJokeTask = new FetchJokeTask(this);
         fetchJokeTask.execute();
+
     }
 
 

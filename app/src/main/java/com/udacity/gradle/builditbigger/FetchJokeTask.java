@@ -28,6 +28,8 @@ public class FetchJokeTask extends AsyncTask<Void,Void,String> {
         this.context = context;
     }
 
+
+
     public FetchJokeTask() {
     }
 
@@ -53,7 +55,7 @@ public class FetchJokeTask extends AsyncTask<Void,Void,String> {
         URL url = null;
         try {
             url = new URL("http://10.0.2.2:8080/_ah/api/jokeApi/v1/mybean");
-            //url = new URL("http://localhost:8080/_ah/api/jokeApi/v1/mybean");
+            //apiPath = new URL("http://localhost:8080/_ah/api/jokeApi/v1/mybean");
 
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
@@ -77,15 +79,8 @@ public class FetchJokeTask extends AsyncTask<Void,Void,String> {
             jokeInfo = buffer.toString();
 
             return jokeInfo;
-//            System.out.println(jokeInfo);
-//            JSONObject jokeJson = new JSONObject(jokeInfo);
-//
-//
-//            System.out.println(jokeJson);
-//            return jokeJson.getString("data");
-
         } catch (Exception e){
-            Log.e(getClass().getName(), e.getMessage());
+            Log.e("FetchJokeTask ::", e.getMessage());
         }
         return DEFAULT_RESPONSE;
     }
